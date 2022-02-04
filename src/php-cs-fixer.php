@@ -5,9 +5,10 @@
  *
  * @link https://cs.symfony.com/
  */
-
+$finder = PhpCsFixer\Finder::create()
+    ->in(getcwd());
 return (new PhpCsFixer\Config())
-    ->setFinder(PhpCsFixer\Finder::create())
+    ->setFinder($finder)
     ->setRules([
         '@PSR12' => true,
         'align_multiline_comment' => true,
