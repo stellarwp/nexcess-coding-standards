@@ -12,6 +12,10 @@
 	<!-- What to ignore: -->
 	<exclude-pattern>./tests/coverage</exclude-pattern>
 
+	<!-- Show progresss & use colors. -->
+	<arg value="sp"/>
+	<arg name="colors"/>
+
 	<!-- Enables parallel processing when available for faster results. -->
 	<arg name="parallel" value="8"/>
 
