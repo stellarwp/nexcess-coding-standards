@@ -23,10 +23,20 @@
     <config name="minimum_supported_wp_version" value="5.8"/>
 
     <!-- Start with PSR-12 as a base. -->
-    <rule ref="PSR12"/>
+    <rule ref="PSR12">
+        <!--
+            We don't have an easy way of reading the "testVersion" configuration value to selectively-
+            apply this rule, but class constant visibility isn't available in PHP < 7.1 so we'll just
+            exclude the rule for now.
+        -->
+        <exclude name="PSR12.Properties.ConstantVisibility.NotFound"/>
+    </rule>
 
     <!-- Import select WordPress rules. -->
-    <rule ref="WordPress.PHP"/>
+    <rule ref="WordPress.PHP">
+        <!-- Short-ternaries are fine. -->
+        <exclude name="WordPress.PHP.DisallowShortTernary" />
+    </rule>
     <rule ref="WordPress.Security"/>
     <rule ref="WordPress.WP">
         <!-- This rule has been deprecated, but will pop up sometimes. -->
@@ -58,6 +68,7 @@
         Special rules for tests:
         1. Test classes may use snake_case for method names (PSR1.Methods.CamelCapsMethodName.NotCamelCaps)
         2. Test classes can use whatever methods they'd like (WordPress.PHP.DiscouragedPHPFunctions, WordPress.PHP.DevelopmentFunctions)
+        3. Test bootstrap files may both define symbols and have side-effects (PSR1.Files.SideEffects.FoundWithSymbols)
     -->
     <rule ref="PSR1.Methods.CamelCapsMethodName.NotCamelCaps">
         <exclude-pattern>tests/*</exclude-pattern>
@@ -67,6 +78,9 @@
     </rule>
     <rule ref="WordPress.PHP.DevelopmentFunctions">
         <exclude-pattern>tests/*</exclude-pattern>
+    </rule>
+    <rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
+        <exclude-pattern>tests/bootstrap.php</exclude-pattern>
     </rule>
 
     <!--

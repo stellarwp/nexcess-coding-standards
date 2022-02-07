@@ -65,6 +65,9 @@ return (new PhpCsFixer\Config())
         'standardize_not_equals' => true,
         'strict_comparison' => true,
         'ternary_operator_spaces' => true,
+        'visibility_required' => [
+            'elements' => ['method', 'property'],
+        ],
         'whitespace_after_comma_in_array' => true,
         'yoda_style' => true,
     ])
