@@ -58,19 +58,19 @@ You may also wish to add the following Composer scripts to make it easier to run
 
 ## Project-specific configuration
 
-The coding standards make a few assumptions about the project:
+The default coding standards make a few assumptions about the project (all of which may be overwritten on a per-project basis):
 
 * Code should be compatible with PHP 5.6 or newer (to match [WordPress' minimum requirements](https://wordpress.org/about/requirements/))
 * Code should be compatible with the latest and previous major release WordPress (a.k.a. "current minus one")
 * Anything passed through [WordPress' internationalization (i18n) functions](https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/) should use the "stellarwp" text domain
 
-Rather than overwriting these values via command-line arguments, it's recommended to create a PHP_CodeSniffer configuration file in your project. [An annotated starter configuration](src/stubs/phpcs.xml) is included in this package, and can automatically be copied into the project root by running the following command:
+Rather than overwriting these values via command-line arguments, it's recommended to create a PHP_CodeSniffer configuration file in your project. [An annotated starter configuration](src/stubs/phpcs.xml) is included in this package, and can automatically be copied into the project root (`.phpcs.xml.dist`) by running the following command:
 
 ```sh
 $ vendor/bin/make-phpcs-config
 ```
 
-Should you need to change the rules for PHP-CS-Fixer, you may publish a `php-cs-fixer.dist.php` file by running the following:
+Should you need to change the rules for PHP-CS-Fixer, you may publish a `.php-cs-fixer.dist.php` file by running the following:
 
 ```sh
 $ vendor/bin/make-php-cs-fixer-config
