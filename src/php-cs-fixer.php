@@ -5,8 +5,10 @@
  *
  * @link https://cs.symfony.com/
  */
+
 $finder = PhpCsFixer\Finder::create()
     ->in(getcwd());
+
 return (new PhpCsFixer\Config())
     ->setFinder($finder)
     ->setRules([
