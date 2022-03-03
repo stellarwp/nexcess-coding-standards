@@ -65,6 +65,17 @@
     <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
 
     <!--
+        Don't complain about missing elements in DocBlocks when {@inheritDoc} is used.
+
+        Reference: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Customisable-Sniff-Properties#squizcommentingfunctioncomment
+    -->
+    <rule ref="Squiz.Commenting.FunctionComment">
+        <properties>
+            <property name="skipIfInheritdoc" value="true" />
+        </properties>
+    </rule>
+
+    <!--
         Special rules for tests:
         1. Test classes may use snake_case for method names (PSR1.Methods.CamelCapsMethodName.NotCamelCaps)
         2. Test classes can use whatever methods they'd like (WordPress.PHP.DiscouragedPHPFunctions, WordPress.PHP.DevelopmentFunctions)
