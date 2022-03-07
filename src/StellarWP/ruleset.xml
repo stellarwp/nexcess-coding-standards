@@ -67,7 +67,16 @@
     <!--
         Don't complain about missing elements in DocBlocks when {@inheritDoc} is used.
 
+        The inline `{@inheritDoc}` is only meant to be used for extending method descriptions, but the
+        "inherit everything, including arguments + return values" alternative, `@inheritDoc` (no curly-
+        braces) was never made official. As a result, many IDEs have chosen to interpret the inline
+        version as full-inheritance.
+
+        In order to prevent PHP_CodeSniffer from assuming we forgot to write documentation that *should*
+        be implicitly inherited, we're allowing `{@inheritDoc}`, even if it's not _technically_ correct.
+
         Reference: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Customisable-Sniff-Properties#squizcommentingfunctioncomment
+        Discussion: https://github.com/stellarwp/coding-standards/pull/3#discussion_r819890070
     -->
     <rule ref="Squiz.Commenting.FunctionComment">
         <properties>
