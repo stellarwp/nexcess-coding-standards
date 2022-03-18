@@ -59,6 +59,7 @@ return (new PhpCsFixer\Config())
         'not_operator_with_successor_space' => true,
         'ordered_imports' => [
             'sort_algorithm' => 'alpha',
+            'imports_order' => ['class', 'function', 'const'],
         ],
         'psr_autoloading' => true,
         'single_quote' => [
