@@ -7,6 +7,7 @@
  */
 
 $finder = PhpCsFixer\Finder::create()
+    ->exclude('node_modules')
     ->in(getcwd());
 
 return (new PhpCsFixer\Config())
