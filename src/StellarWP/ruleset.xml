@@ -5,23 +5,6 @@
     <!-- Enables parallel processing when available for faster results. -->
     <arg name="parallel" value="8"/>
 
-    <!--
-        Set range of supported PHP versions.
-
-        It's recommended that you leave off the maximum version in most cases,
-        e.g. "5.6-" means "We support PHP 5.6 or newer".
-
-        Reference: https://github.com/PHPCompatibility/PHPCompatibility#sniffing-your-code-for-compatibility-with-specific-php-versions
-     -->
-    <config name="testVersion" value="5.6-"/>
-
-    <!--
-        Set the minimum supported WordPress version.
-
-        Reference: https://github.com/WordPress/WordPress-Coding-Standards/wiki/Customizable-sniff-properties#minimum-wp-version-to-check-for-usage-of-deprecated-functions-classes-and-function-parameters
-     -->
-    <config name="minimum_supported_wp_version" value="5.8"/>
-
     <!-- Start with PSR-12 as a base. -->
     <rule ref="PSR12">
         <!--
