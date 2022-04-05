@@ -38,6 +38,8 @@ return (new PhpCsFixer\Config())
         'linebreak_after_opening_tag' => true,
         'lowercase_cast' => true,
         'mb_str_functions' => true,
+        // This rule can cause issues with mixed PHP and HTML in templates.
+        'method_argument_space' => false,
         'multiline_comment_opening_closing' => true,
         'native_function_casing' => true,
         'no_blank_lines_after_class_opening' => true,
