@@ -1,0 +1,16 @@
+# External dependencies.
+/vendor
+composer.lock
+
+# Cache files.
+.php_cs.cache
+.php-cs-fixer.cache
+
+# Archives and dumps.
+*.sql
+*.tar.gz
+*.zip
+
+# System files.
+.DS_Store
+Thumbs.db
