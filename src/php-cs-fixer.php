@@ -20,7 +20,7 @@ return (new PhpCsFixer\Config())
             'space_before_parenthesis' => true,
         ],
         'comment_to_phpdoc' => false,
-        'compact_nullable_typehint' => true,
+        'compact_nullable_type_declaration' => true,
         'concat_space' => [
             'spacing' => 'one',
         ],
@@ -29,7 +29,7 @@ return (new PhpCsFixer\Config())
         ],
         'dir_constant' => true,
         'ereg_to_preg' => true,
-        'function_typehint_space' => true,
+        'type_declaration_spaces' => true,
         'include' => true,
         'increment_style' => [
             'style' => 'post',
@@ -54,7 +54,7 @@ return (new PhpCsFixer\Config())
         ],
         'no_null_property_initialization' => true,
         'no_superfluous_elseif' => true,
-        'no_trailing_comma_in_singleline_array' => true,
+        'no_trailing_comma_in_singleline' => true,
         'no_unused_imports' => true,
         'no_useless_else' => true,
         'no_useless_return' => true,

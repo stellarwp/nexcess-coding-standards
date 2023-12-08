@@ -1,7 +1,7 @@
 {
     "name": "stellarwp/coding-standards",
     "description": "Centralized coding standards for StellarWP packages",
-    "type" : "phpcodesniffer-standard",
+    "type": "phpcodesniffer-standard",
     "license": "MIT",
     "authors": [
         {
@@ -19,7 +19,7 @@
         "dealerdirect/phpcodesniffer-composer-installer": "*",
         "friendsofphp/php-cs-fixer": "^3.5",
         "phpcompatibility/phpcompatibility-wp": "^2.1",
-        "wp-coding-standards/wpcs": "^2.3"
+        "wp-coding-standards/wpcs": "^3.0"
     },
     "require-dev": {
         "assertwell/shellcheck": "^1.0"
