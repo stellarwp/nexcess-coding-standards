@@ -18,12 +18,12 @@
     <!-- Import select WordPress rules. -->
     <rule ref="WordPress.PHP">
         <!-- Short-ternaries are fine. -->
-        <exclude name="WordPress.PHP.DisallowShortTernary" />
+        <exclude name="Universal.Operators.DisallowShortTernary" />
     </rule>
     <rule ref="WordPress.Security"/>
     <rule ref="WordPress.WP">
         <!-- This rule has been deprecated, but will pop up sometimes. -->
-        <exclude name="WordPress.WP.TimezoneChange" />
+        <exclude name="WordPress.DateTime.RestrictedFunctions" />
     </rule>
 
     <!-- WordPress Documentation standards -->
