@@ -1,5 +1,5 @@
 {
-    "name": "stellarwp/coding-standards",
+    "name": "stellarwp/nexcess-coding-standards",
     "description": "Centralized coding standards for StellarWP packages",
     "type" : "phpcodesniffer-standard",
     "license": "MIT",
@@ -10,8 +10,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/stellarwp/coding-standards/issues",
-        "source": "https://github.com/stellarwp/coding-standards"
+        "issues": "https://github.com/stellarwp/nexcess-coding-standards/issues",
+        "source": "https://github.com/stellarwp/nexcess-coding-standards"
     },
     "minimum-stability": "stable",
     "require": {
