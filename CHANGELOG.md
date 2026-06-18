@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Version 2.0.0] - 2026-06-18
 
+- Complete rewrite of the standards to revive this archived package.
 - Replaced the previous StellarWP package scaffold with a focused Nexcess PHPCS standard.
 - Added the `Nexcess` ruleset under `lib/Nexcess`.
 - Added a root `phpcs.xml.dist` for validating this package.
