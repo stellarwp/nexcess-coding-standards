@@ -107,7 +107,30 @@
 	<!-- Checks lines count between different class members, eg. between last property and first method -->
 	<rule ref="SlevomatCodingStandard.Classes.ClassMemberSpacing" />
 	<!-- Checks that class/trait/interface members are in the correct order -->
-	<rule ref="SlevomatCodingStandard.Classes.ClassStructure" />
+	<rule ref="SlevomatCodingStandard.Classes.ClassStructure">
+		<properties>
+			<property name="groups" type="array">
+				<element value="uses" />
+
+				<element value="enum cases" />
+
+				<!-- Public constants are first, but you don't care about the order of protected or private constants -->
+				<element value="public constants" />
+				<element value="constants" />
+
+				<!-- You don't care about the order among the properties. The same can be done with "properties" shortcut -->
+				<element value="properties" />
+
+				<!-- Constructor is first, then all public methods, then protected/private methods and magic methods are last -->
+				<element value="constructor" />
+				<element value="abstract methods" />
+				<element value="static methods" />
+				<element value="all public methods" />
+				<element value="methods" />
+				<element value="magic methods" />
+			</property>
+		</properties>
+	</rule>
 	<!-- Checks that there is a certain number of blank lines between constants -->
 	<rule ref="SlevomatCodingStandard.Classes.ConstantSpacing" />
 	<!-- Force spacing around a class definition -->
