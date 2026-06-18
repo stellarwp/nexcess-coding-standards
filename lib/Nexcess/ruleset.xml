@@ -116,7 +116,8 @@
 	<rule ref="SlevomatCodingStandard.Classes.PropertySpacing" />
 	<!-- Forbid uses of multiple traits separated by comma -->
 	<rule ref="SlevomatCodingStandard.Classes.TraitUseDeclaration" />
-	<rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation" />
+	<!-- disable for now
+	<rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation" /> -->
 	<rule ref="SlevomatCodingStandard.Namespaces.NamespaceDeclaration" />
 	<rule ref="SlevomatCodingStandard.Namespaces.UselessAlias" />
 	<rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints" />
