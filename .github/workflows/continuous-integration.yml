@@ -1,4 +1,4 @@
-# This is the main Continuous Integration (CI) pipeline for the the stellarwp/coding-standards package.
+# This is the main Continuous Integration (CI) pipeline for the stellarwp/nexcess-coding-standards package.
 #
 # Any time code is pushed to one of the main branches or a PR is opened, this pipeline should be
 # run to ensure everything still works as designed and meets our coding standards.
@@ -16,22 +16,33 @@ jobs:
 
   # Mmm, that's some good dog food!
   coding-standards:
-    name: Coding standards
+    name: Coding standards (PHP ${{ matrix.php-version }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version:
+          - '7.4'
+          - '8.0'
+          - '8.1'
+          - '8.2'
+          - '8.3'
+          - '8.4'
+          - '8.5'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
 
       - name: Configure PHP environment
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.0'
+          php-version: ${{ matrix.php-version }}
           extensions: mbstring
           coverage: none
 
       - name: Validate composer.json
         run: composer validate
 
-      - uses: ramsey/composer-install@v2
+      - uses: ramsey/composer-install@v4
 
       - name: Check coding standards
         run: composer test

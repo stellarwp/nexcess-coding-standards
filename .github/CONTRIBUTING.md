@@ -63,19 +63,13 @@ Once the release branch is merged into a `main`, a new tag should be created (e.
 
 ## PHP compatibility
 
-While StellarWP would love to see everyone running the latest and greatest versions of PHP, we also recognize that it's important to create tools that can service the larger WordPress community. As such, we commit to supporting [all versions officially supported by the latest release of WordPress](https://wordpress.org/about/requirements/).
+While StellarWP would love to see everyone running the latest and greatest versions of PHP, we also recognize that it's important to create tools that can service the larger WordPress community. This package currently supports PHP 7.4 and newer.
 
-The Continuous Integration (CI) pipeline is configured to run tests against all supported versions, so feel free to code in whatever version of PHP you have installed locally and let the pipeline sort it out! 😄
+The Continuous Integration (CI) pipeline is configured to run tests against each supported PHP version, so feel free to code in whatever supported version of PHP you have installed locally and let the pipeline sort it out! 😄
 
 ## Automated testing
 
 This project utilizes a Continuous Integration (CI) pipeline, powered by [GitHub Actions](https://github.com/features/actions). Every pull request will trigger a series of automated checks to ensure the highest quality of code.
-
-## Coding standards
-
-Despite this being WordPress-oriented code, this project uses [the PSR-12 coding standard](https://www.php-fig.org/psr/psr-12/), which has been adopted by the larger PHP community. We then supplement this with select WordPress best practices (verifying nonce usage, late-escaping, sanitization of user input, etc.).
-
-One notable exception to PSR-12 is in our test classes, where test methods should use snake_case and the `@test` annotation:
 
 ```php
 # Discouraged: camelCase with "test" prefix:
@@ -88,8 +82,8 @@ public function testItDoesTheThing() { /* ... */ }
 public function it_does_the_thing() { /* ... */ }
 ```
 
-Our coding standards are enforced automatically as part of the Continuous Integration (CI) pipeline via [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) and [PHP-CS-Fixer](https://cs.symfony.com/). You may also run these coding standards checks at any time with the following command:
+Our coding standards are enforced automatically as part of the Continuous Integration (CI) pipeline via [PHP_CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer). You may also run these coding standards checks at any time with the following command:
 
 ```sh
-$ composer test:standards
+$ composer test
 ```
