@@ -1,45 +1,48 @@
 {
     "name": "stellarwp/nexcess-coding-standards",
-    "description": "Centralized coding standards for StellarWP packages",
-    "type" : "phpcodesniffer-standard",
+    "description": "The Nexcess Coding Standard for PHP_CodeSniffer",
+    "type": "phpcodesniffer-standard",
+    "keywords": [
+        "coding-standard",
+        "nexcess",
+        "phpcs",
+        "phpcodesniffer",
+        "static-analysis",
+        "stellarwp"
+    ],
     "license": "MIT",
     "authors": [
         {
-            "name": "StellarWP",
-            "homepage": "https://stellarwp.com"
+            "name": "Nexcess",
+            "homepage": "https://www.nexcess.com"
         }
     ],
     "support": {
         "issues": "https://github.com/stellarwp/nexcess-coding-standards/issues",
         "source": "https://github.com/stellarwp/nexcess-coding-standards"
     },
-    "minimum-stability": "stable",
     "require": {
-        "php": "^5.6 | ^7.0 | ^8.0",
-        "dealerdirect/phpcodesniffer-composer-installer": "*",
-        "friendsofphp/php-cs-fixer": "^3.5",
+        "php": ">=7.4",
+        "automattic/vipwpcs": "^3.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
         "phpcompatibility/phpcompatibility-wp": "^2.1",
-        "wp-coding-standards/wpcs": "^2.3"
+        "slevomat/coding-standard": "^8.0",
+        "squizlabs/php_codesniffer": "^3.6"
     },
-    "require-dev": {
-        "assertwell/shellcheck": "^1.0"
-    },
-    "bin": [
-        "bin/make-php-cs-fixer-config",
-        "bin/make-phpcs-config"
-    ],
     "scripts": {
+        "phpcs": "vendor/bin/phpcs --standard=phpcs.xml.dist",
+        "ruleset": "vendor/bin/phpcs --standard=Nexcess -e",
         "test": [
-            "phpcs --standard=./stubs/phpcs.xml --cache src/ stubs/",
-            "php-cs-fixer fix --config=./src/php-cs-fixer.php -v --diff --dry-run",
-            "vendor/bin/shellcheck bin/*"
+            "@ruleset",
+            "@phpcs"
         ]
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "config": {
-        "preferred-install": "dist",
-        "sort-packages": true,
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
-        }
+        },
+        "sort-packages": true
     }
 }
