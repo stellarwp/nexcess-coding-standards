@@ -64,7 +64,10 @@
 	</rule>
 	<!-- Covers rule: Put spaces on both sides of the opening and closing parenthesis of
 		   functions, methods, if, elseif, foreach, for, and switch blocks. -->
-	<rule ref="WordPress.WhiteSpace.ControlStructureSpacing" />
+	<rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
+		<!-- Broken inside methods/functions. -->
+		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.BlankLineAfterEnd" />
+	</rule>
 
 	<!-- Generic / Squiz -->
 	<rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie" />
